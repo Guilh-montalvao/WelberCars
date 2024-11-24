@@ -26,11 +26,17 @@ export default function Home() {
         <Canvas
           className='h-full w-full'
           shadows
-          camera={{
-            position: [-6, 2, 2],
-          }}
         >
           <Render modelPath='/2022-mclaren-765lt/Final_Model.fbx' />
+        </Canvas>
+      </div>
+     {/* Página 3 */}
+      <div className="w-full overflow-x-hidden h-screen flex justify-center items-center">
+        <Canvas
+          className='h-full w-full'
+          shadows
+        >
+          <Render modelPath='/2017-mclaren-720s-gt3-duke-dynamics-widebody-kit/FINAL_7_1.fbx' />
         </Canvas>
       </div>
     </div>
