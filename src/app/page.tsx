@@ -159,6 +159,14 @@ export default function Home() {
           </Canvas>
       ) : <p>Nenhum carro selecionado!</p>}
       </div>
+      <div className="w-full overflow-x-hidden h-screen relative flex">
+        <Image
+          src={'/footer.png'}
+          alt="Homepage image"
+          fill
+          className="object-cover z-0 pointer-events-none"
+        />
+        </div>
     </div>
   );
 }
