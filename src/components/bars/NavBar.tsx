@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export function NavBar() {
     return (
-        <div className="absolute flex flex-row z-50 w-screen h-[131px] justify-between bg-black px-6">
+        <div className="absolute flex flex-row z-50 w-full h-[131px] justify-between bg-black px-6">
             <Image
               src={'/logo.png'}
               alt="logo"

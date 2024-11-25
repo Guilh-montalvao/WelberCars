@@ -2,12 +2,13 @@
 
 import { useLoader, extend, useThree, useFrame, ReactThreeFiber } from "@react-three/fiber"
 import { FBXLoader } from "three/addons/loaders/FBXLoader.js"
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { Reflector, shaderMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 import { Bloom, EffectComposer, ToneMapping } from "@react-three/postprocessing"
 import { BlendFunction } from 'postprocessing'
+import { useWindowSize } from "@uidotdev/usehooks"
 
 // Criando um material com Shader para bordas pretas e centro branco
 const TransparentBorderMaterial = shaderMaterial(
@@ -52,11 +53,21 @@ declare global {
 const Render = ({ modelPath }: { modelPath: string }) => {
   const mesh = useRef<THREE.Mesh>(null!)
   const model = useLoader(FBXLoader, modelPath)
-
+  const { width } = useWindowSize()
+  const [isMobile, setIsMobile] = useState(false)
   const { camera, gl } = useThree()
 
   useEffect(() => {
-    camera.position.set(0, 2, 10)
+    const handleResize = () => setIsMobile((width ?? window.innerWidth) < 800)
+    console.log(width)
+    window.addEventListener('resize', handleResize)
+    handleResize()
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [width])
+
+  useEffect(() => {
+    camera.position.set(0, isMobile ? 20 : 10, 10)
     camera.lookAt(0, 0, 0)
 
     const controls = new OrbitControls(camera, gl.domElement)
@@ -67,7 +78,7 @@ const Render = ({ modelPath }: { modelPath: string }) => {
     controls.update()
 
     return () => controls.dispose()
-  }, [camera, gl])
+  }, [camera, gl, isMobile])
 
   useFrame(() => {
     if (mesh.current) mesh.current.rotation.y += 0.005
@@ -90,14 +101,14 @@ const Render = ({ modelPath }: { modelPath: string }) => {
           adaptationRate={1.0}
         />
         <Bloom
-          intensity={1.2}
+          intensity={0.1}
           luminanceThreshold={0.4}
           luminanceSmoothing={0.1}
         />
       </EffectComposer>
 
       {/* Cena */}
-      <group scale={[3, 3, 3]} rotation={[Math.PI / 12, 0, 0]}>
+      <group scale={[3, 3, 3]} rotation={[0, 0, 0]}>
         {/* Luzes */}
         <ambientLight intensity={5} />
         <pointLight position={[5, 5, 5]} intensity={1} castShadow />
