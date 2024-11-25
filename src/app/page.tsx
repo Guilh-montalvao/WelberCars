@@ -26,12 +26,12 @@ const carsData = [
     src: "/2017-mclaren-720s.jpg",
     alt: "2017 Mclaren 720s",
     type: Cars.Mclaren720s,
-    speed: 330,
-    torque: 800,
-    lbft: 590,
-    power: 765,
-    mph: 205,
-    bhp: 755
+    speed: 341,
+    torque: 770,
+    lbft: 568,
+    power: 720,
+    mph: 212,
+    bhp: 710
   }
 ]
 
@@ -58,7 +58,7 @@ export default function Home() {
           <div
             className="flex flex-col absolute z-50 gap-2 p-5"
             style={{
-              top: '33%', // Ajuste conforme necessário
+              top: '20%', // Ajuste conforme necessário
               left: '1rem',
               width: 'fit-content', // Limita a largura ao conteúdo interno
               height: 'fit-content', // Limita a altura ao conteúdo interno
@@ -100,7 +100,7 @@ export default function Home() {
           <div
             className="flex flex-col absolute z-50 gap-2 p-5"
             style={{
-              top: '66%',
+              top: '80%',
               left: '1rem',
               width: 'fit-content',
               height: 'fit-content',
