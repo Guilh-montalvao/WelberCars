@@ -139,16 +139,12 @@ const Render = ({ modelPath }: { modelPath: string }) => {
         blur={[400, 100]} // Intensidade do blur nas direções X e Y
       >
         {(Material, props) => (
-          <>
-            <Material
-              color="#a0a0a0" // Cor do reflexo
-              metalness={0.9} // Metalicidade do material refletor
-              roughness={0.1} // Rugosidade do material refletor
-              {...props} // Passa as propriedades adicionais
-            />
-            {/* Adicionando o material de bordas transparentes */}
-            {/* <transparentBorderMaterial fadeDistance={0.01} /> */}
-          </>
+          <Material
+            color="#a0a0a0" // Cor do reflexo
+            metalness={0.9} // Metalicidade do material refletor
+            roughness={0.1} // Rugosidade do material refletor
+            {...props}
+          />
         )}
       </Reflector>
       </group>

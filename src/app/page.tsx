@@ -41,7 +41,6 @@ export default function Home() {
   
   return (
     <div className="flex w-full overflow-x-hidden flex-col">
-      {/* Página 1 */}
       <div className="w-full overflow-x-hidden h-screen relative flex">
         <Image
           src={'/homepage-bg.png'}
@@ -58,11 +57,11 @@ export default function Home() {
           <div
             className="flex flex-col absolute z-50 gap-2 p-5"
             style={{
-              top: '20%', // Ajuste conforme necessário
+              top: '20%',
               left: '1rem',
-              width: 'fit-content', // Limita a largura ao conteúdo interno
-              height: 'fit-content', // Limita a altura ao conteúdo interno
-              pointerEvents: 'none', // Faz o contêiner ser ignorado
+              width: 'fit-content',
+              height: 'fit-content',
+              pointerEvents: 'none',
             }}
           >
             <div className="flex flex-row gap-2">
@@ -121,11 +120,11 @@ export default function Home() {
           <div 
             className="absolute z-50 flex flex-col items-center justify-center gap-4"
             style={{
-              top: '50%', // Ajuste conforme necessário
+              top: '50%',
               right: '1rem',
-              width: 'fit-content', // Limita a largura ao conteúdo interno
-              height: 'fit-content', // Limita a altura ao conteúdo interno
-              pointerEvents: 'none', // Faz o contêiner ser ignorado
+              width: 'fit-content',
+              height: 'fit-content',
+              pointerEvents: 'none',
             }}
           >
           {carsData.map((carData) => (
@@ -137,7 +136,7 @@ export default function Home() {
                 width={100}
                 height={100}
                 sizes="100vw"
-                className="w-15 sm:w-20 md:w-24 lg:w-32 xl:w-40" // Ajuste o tamanho conforme o dispositivo
+                className="w-15 sm:w-20 md:w-24 lg:w-32 xl:w-40"
                 style={{
                   height: 'auto',
                   pointerEvents: 'auto',
