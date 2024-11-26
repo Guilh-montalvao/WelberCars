@@ -11,10 +11,10 @@ export function NavBar() {
               height={81}
             />
             <div className="flex flex-row justify-center items-center gap-5">
+                <Link href={'/about'} className="text-xl">Inicio</Link>
+                <Link href={'/about'} className="text-xl">Clube</Link>
                 <Link href={'/about'} className="text-xl">Sobre</Link>
-                <Link href={'/about'} className="text-xl">Sobre</Link>
-                <Link href={'/about'} className="text-xl">Sobre</Link>
-                <Link href={'/about'} className="text-xl">Sobre</Link>
+                <Link href={'/about'} className="text-xl">Ajuda</Link>
                 <button className="text-xl border p-2 border-white">Register Now</button>
             </div>
         </div>
