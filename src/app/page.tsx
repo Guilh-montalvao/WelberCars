@@ -1,3 +1,4 @@
+
 'use client'
 
 import Render from "@/components/render";
@@ -166,6 +167,6 @@ export default function Home() {
           className="object-cover z-0 pointer-events-none"
         />
         </div>
-    </div>
+  1  </div>
   );
 }
